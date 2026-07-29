@@ -223,130 +223,119 @@ border:1px solid rgba(255,255,255,.35);
 /*========================================
 NAVIGATION
 ========================================*/
+/*========================================
+HEADER
+========================================*/
 
-header{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-z-index:999;
-
-transition:.4s;
-
-background:#fff;
-
-box-shadow:var(--shadow-sm);
-
-}
-
-header.scrolled{
-
-background:#fff;
-
-box-shadow:var(--shadow-sm);
-
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:#fff;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
 }
 
 .navbar{
 
-height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
+    height:85px;
 
 }
 
 .logo{
 
-display:flex;
-
-align-items:center;
-
-gap:12px;
+    text-decoration:none;
 
 }
 
 .logo h2{
 
-font-size:30px;
-
-color:var(--primary);
+    color:#0A4FAF;
+    font-size:32px;
+    font-weight:800;
 
 }
 
 .nav-links{
 
-display:flex;
-
-gap:38px;
+    display:flex;
+    align-items:center;
+    gap:36px;
 
 }
 
 .nav-links a{
 
-font-weight:500;
-
-position:relative;
-
-transition:.3s;
+    font-weight:600;
+    color:#1E293B;
+    transition:.3s;
 
 }
 
-.nav-links a::after{
+.nav-links a:hover{
 
-content:"";
-
-position:absolute;
-
-left:0;
-
-bottom:-8px;
-
-height:2px;
-
-width:0;
-
-background:var(--primary);
-
-transition:.3s;
+    color:#0A4FAF;
 
 }
 
-.nav-links a:hover::after{
+.nav-right{
 
-width:100%;
+    display:flex;
+    align-items:center;
+    gap:18px;
 
 }
 
 .buy-btn{
 
-padding:15px 32px;
-
-border-radius:50px;
-
-background:linear-gradient(135deg,#0A4FAF,#2E86FF);
-
-color:white;
-
-font-weight:600;
-
-transition:.3s;
-
-box-shadow:0 10px 30px rgba(46,134,255,.3);
+    padding:14px 30px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#0A4FAF,#2E86FF);
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
 
 }
 
 .buy-btn:hover{
 
-transform:translateY(-4px);
+    transform:translateY(-3px);
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    width:46px;
+    height:46px;
+
+    border:none;
+    background:transparent;
+
+    cursor:pointer;
+
+    flex-direction:column;
+    justify-content:center;
+    gap:6px;
+
+}
+
+.menu-toggle span{
+
+    width:28px;
+    height:3px;
+
+    background:#0A4FAF;
+
+    border-radius:20px;
+
+    transition:.35s;
 
 }
 
@@ -495,5 +484,37 @@ UTILITY CLASSES
     transform:translateY(-3px);
 
     box-shadow:0 12px 25px rgba(10,79,175,.25);
+
+}
+/*========================================
+HAMBURGER ANIMATION
+========================================*/
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:rotate(45deg) translateY(13px);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:rotate(-45deg) translateY(-13px);
+
+}
+.hero{
+
+overflow:hidden;
+
+}
+
+.hero-container{
+
+width:100%;
 
 }

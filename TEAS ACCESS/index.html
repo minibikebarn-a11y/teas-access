@@ -31,30 +31,63 @@
 
 <body>
 
-<header>
-    <div class="">
+<header class="header">
+
+    <div class="container">
+
         <nav class="navbar">
 
-            <div class="logo">
-                <h2 id="siteLogo">TEAS ACCESS</h2>
-            </div>
-
-            <ul class="nav-links">
-               <li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="product.html">Product</a></li>
-<li><a href="reviews.html">Reviews</a></li>
-<li><a href="faq.html">FAQ</a></li>
-<li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <a href="checkout.html" class="buy-btn">
-                Buy Now
+            <a href="index.html" class="logo">
+                <h2>TEAS ACCESS</h2>
             </a>
 
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+            <div class="nav-right">
+
+                <a href="checkout.html" class="buy-btn">
+                    Buy Now
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
         </nav>
+
     </div>
+
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="product.html">Product</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="checkout.html" class="mobile-buy-btn">
+        Buy Now
+    </a>
+
+</div>
 <!-- ======================================
 HERO SECTION
 ====================================== -->
@@ -1464,5 +1497,6 @@ support@teasaccess.com
 <script src="js/home-students.js"></script>
 <script src="js/main.js"></script>
 <script src="js/reveal.js"></script>
+<script src="js/mobile-menu.js"></script>
 </body>
 </html>

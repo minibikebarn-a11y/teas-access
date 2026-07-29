@@ -60,6 +60,12 @@ html{
 
 scroll-behavior:smooth;
 
+overflow-x:hidden;
+
+width:100%;
+
+max-width:100%;
+
 }
 
 body{
@@ -72,9 +78,15 @@ color:var(--dark);
 
 overflow-x:hidden;
 
+width:100%;
+
+max-width:100%;
+
 line-height:1.7;
 
 padding-top:90px;
+
+position:relative;
 
 }
 

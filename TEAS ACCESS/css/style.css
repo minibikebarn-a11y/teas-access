@@ -102,12 +102,17 @@ list-style:none;
 
 .container{
 
-width:min(92%,var(--container));
+width:100%;
+
+max-width:1250px;
 
 margin:auto;
 
-}
+padding-left:20px;
 
+padding-right:20px;
+
+}
 /*========================================
 TYPOGRAPHY
 ========================================*/
@@ -240,10 +245,16 @@ HEADER
 .navbar{
 
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
 
-    height:85px;
+    justify-content:space-between;
+
+    min-height:85px;
+
+    width:100%;
+
+    position:relative;
 
 }
 
@@ -264,8 +275,12 @@ HEADER
 .nav-links{
 
     display:flex;
+
     align-items:center;
-    gap:36px;
+
+    gap:32px;
+
+    flex-wrap:nowrap;
 
 }
 
@@ -286,11 +301,12 @@ HEADER
 .nav-right{
 
     display:flex;
+
     align-items:center;
+
     gap:18px;
 
 }
-
 .buy-btn{
 
     padding:14px 30px;

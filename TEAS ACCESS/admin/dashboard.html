@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | TEAS ACCESS</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<h2>TEAS ACCESS</h2>
+<p>Admin Dashboard</p>
+
+</div>
+
+<nav>
+
+<a class="active" href="dashboard.html">
+<i data-lucide="layout-dashboard"></i>
+Dashboard
+</a>
+
+<a href="orders.html">
+<i data-lucide="shopping-cart"></i>
+Orders
+</a>
+
+<a href="products.html">
+<i data-lucide="book-open"></i>
+Products
+</a>
+
+<a href="reviews.html">
+<i data-lucide="star"></i>
+Reviews
+</a>
+
+<a href="students.html">
+<i data-lucide="graduation-cap"></i>
+Student Results
+</a>
+
+<a href="faq.html">
+<i data-lucide="circle-help"></i>
+FAQ
+</a>
+
+<a href="messages.html">
+<i data-lucide="mail"></i>
+Messages
+</a>
+
+<a href="newsletter.html">
+<i data-lucide="send"></i>
+Newsletter
+</a>
+
+<a href="settings.html">
+<i data-lucide="settings"></i>
+Settings
+</a>
+
+<a id="logoutBtn" href="#">
+<i data-lucide="log-out"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+Dashboard
+
+</h1>
+
+<p>
+
+Welcome back, Administrator
+
+</p>
+
+</div>
+
+<div class="admin-avatar">
+
+A
+
+</div>
+
+</header>
+
+<!-- Stats -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<h3>
+
+Today's Orders
+
+</h3>
+
+<h2 id="todayOrders">
+
+0
+
+</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h3>
+
+Pending Payment
+
+</h3>
+
+<h2 id="pendingOrders">
+
+0
+
+</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h3>
+
+Completed Orders
+
+</h3>
+
+<h2 id="completedOrders">
+
+0
+
+</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h3>
+
+Revenue
+
+</h3>
+
+<h2 id="revenue">
+
+$0
+
+</h2>
+
+</div>
+
+</section>
+
+<!-- Orders -->
+
+<section class="dashboard-card">
+
+<h2>
+
+Recent Orders
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Order</th>
+
+<th>Customer</th>
+
+<th>Status</th>
+
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recentOrders">
+
+<tr>
+
+<td colspan="4">
+
+No orders yet.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- Quick Actions -->
+
+<section class="dashboard-card">
+
+<h2>
+
+Quick Actions
+
+</h2>
+
+<div class="quick-actions">
+
+<a href="orders.html" class="action-card">
+
+<i data-lucide="shopping-cart"></i>
+
+<span>
+
+Manage Orders
+
+</span>
+
+</a>
+
+<a href="students.html" class="action-card">
+
+<i data-lucide="upload"></i>
+
+<span>
+
+Upload Student Result
+
+</span>
+
+</a>
+
+<a href="reviews.html" class="action-card">
+
+<i data-lucide="star"></i>
+
+<span>
+
+Manage Reviews
+
+</span>
+
+</a>
+
+<a href="faq.html" class="action-card">
+
+<i data-lucide="circle-help"></i>
+
+<span>
+
+Edit FAQ
+
+</span>
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Go up one level to reach the project root -->
+<script src="../js/supabase.js"></script>
+
+<!-- login.js is inside admin/js -->
+<script src="js/login.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+
+</html>

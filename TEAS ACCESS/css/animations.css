@@ -1,0 +1,172 @@
+/* Floating */
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-20px);}
+
+100%{transform:translateY(0);}
+
+}
+
+/* Fade Up */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* Zoom */
+
+.zoom{
+
+transition:.35s;
+
+}
+
+.zoom:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Hover Lift */
+
+.hover-card{
+
+transition:.35s;
+
+}
+
+.hover-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 25px 55px rgba(0,0,0,.12);
+
+}
+
+/* Button Pulse */
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:0 0 0 0 rgba(46,134,255,.4);
+
+}
+
+100%{
+
+box-shadow:0 0 0 25px rgba(46,134,255,0);
+
+}
+
+}
+
+.pulse{
+
+animation:pulse 2s infinite;
+
+}
+/*========================================
+FEATURE ICON ANIMATION
+========================================*/
+
+.feature-card:hover .feature-icon{
+
+transform:rotate(-8deg) scale(1.08);
+
+transition:.35s;
+
+}
+/*========================================
+SCROLL REVEAL
+========================================*/
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1);
+    will-change:opacity, transform;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+/*========================================
+STAGGER DELAYS
+========================================*/
+
+.delay-1{
+    transition-delay:.08s;
+}
+
+.delay-2{
+    transition-delay:.16s;
+}
+
+.delay-3{
+    transition-delay:.24s;
+}
+
+.delay-4{
+    transition-delay:.32s;
+}
+
+.delay-5{
+    transition-delay:.40s;
+}
+
+.delay-6{
+    transition-delay:.48s;
+}
+.reveal-left{
+    opacity:0;
+    transform:translateX(-40px);
+    transition:.8s ease;
+}
+
+.reveal-left.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.reveal-right{
+    opacity:0;
+    transform:translateX(40px);
+    transition:.8s ease;
+}
+
+.reveal-right.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.reveal-scale{
+    opacity:0;
+    transform:scale(.92);
+    transition:.8s ease;
+}
+
+.reveal-scale.active{
+    opacity:1;
+    transform:scale(1);
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | TEAS ACCESS</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>TEAS ACCESS</h2>
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                <i data-lucide="layout-dashboard"></i>
+                Dashboard
+            </a>
+
+            <a href="orders.html">
+                <i data-lucide="shopping-cart"></i>
+                Orders
+            </a>
+
+            <a class="active" href="products.html">
+                <i data-lucide="book-open"></i>
+                Products
+            </a>
+
+            <a href="reviews.html">
+                <i data-lucide="star"></i>
+                Reviews
+            </a>
+
+            <a href="students.html">
+                <i data-lucide="graduation-cap"></i>
+                Student Results
+            </a>
+
+            <a href="faq.html">
+                <i data-lucide="circle-help"></i>
+                FAQ
+            </a>
+
+            <a href="messages.html">
+                <i data-lucide="mail"></i>
+                Messages
+            </a>
+
+            <a href="newsletter.html">
+                <i data-lucide="send"></i>
+                Newsletter
+            </a>
+
+            <a href="settings.html">
+                <i data-lucide="settings"></i>
+                Settings
+            </a>
+
+            <a id="logoutBtn" href="#">
+                <i data-lucide="log-out"></i>
+                Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Products</h1>
+                <p>Manage your digital products</p>
+            </div>
+
+            <a href="edit-product.html" class="login-btn">
+                + Add Product
+            </a>
+
+        </header>
+
+        <div class="orders-toolbar">
+
+            <input
+                type="text"
+                id="searchProducts"
+                placeholder="Search products...">
+
+        </div>
+
+        <section class="dashboard-card">
+
+            <table class="orders-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>PDF</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="productsTable">
+
+                    <tr>
+
+                        <td colspan="5">
+                            Loading products...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+lucide.createIcons();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="js/login.js"></script>
+<script src="js/products.js"></script>
+
+</body>
+</html>

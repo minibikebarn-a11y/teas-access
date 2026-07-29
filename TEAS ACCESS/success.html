@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Order Submitted | TEAS ACCESS
+
+</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/checkout.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<section class="success-page">
+
+<div class="container">
+
+<div class="success-card">
+
+<div class="success-icon">
+
+<i data-lucide="check"></i>
+
+</div>
+
+<h1>
+
+Order Submitted Successfully!
+
+</h1>
+
+<p>
+
+Thank you for choosing TEAS ACCESS.
+
+We've successfully received your order.
+
+</p>
+
+<div class="order-number">
+
+<h4>
+
+Order Number
+
+</h4>
+
+<h2 id="orderNumber">
+
+Loading...
+
+</h2>
+
+</div>
+
+<div class="next-steps">
+
+<h3>
+
+What Happens Next?
+
+</h3>
+
+<div class="step-item">
+
+<span>1</span>
+
+<p>
+
+We'll review your order.
+
+</p>
+
+</div>
+
+<div class="step-item">
+
+<span>2</span>
+
+<p>
+
+We'll send an invoice to your email.
+
+</p>
+
+</div>
+
+<div class="step-item">
+
+<span>3</span>
+
+<p>
+
+Complete payment using the invoice.
+
+</p>
+
+</div>
+
+<div class="step-item">
+
+<span>4</span>
+
+<p>
+
+Receive your ATI TEAS Guide.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="payment-method">
+
+<h3>
+
+Preferred Payment Method
+
+</h3>
+
+<h2 id="paymentMethod">
+
+Loading...
+
+</h2>
+
+</div>
+
+<div class="success-buttons">
+
+<a
+href="index.html"
+class="btn btn-outline">
+
+Return Home
+
+</a>
+
+<a
+href="contact.html"
+class="btn btn-primary">
+
+Contact Support
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+lucide.createIcons();
+
+const order = JSON.parse(sessionStorage.getItem("lastOrder"));
+
+if(order){
+
+document.getElementById("orderNumber").textContent =
+order.order_number;
+
+document.getElementById("paymentMethod").textContent =
+order.payment_method;
+
+}
+
+</script>
+
+</body>
+
+</html>

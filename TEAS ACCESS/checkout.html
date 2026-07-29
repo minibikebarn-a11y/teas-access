@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Checkout | TEAS ACCESS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- ======================================
+HEADER
+====================================== -->
+
+<header class="checkout-header">
+
+    <div class="container">
+
+        <a href="index.html" class="logo">
+
+            TEAS ACCESS
+
+        </a>
+
+        <div class="checkout-security">
+
+            <i data-lucide="shield-check"></i>
+
+            Secure Checkout
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ======================================
+PROGRESS
+====================================== -->
+
+<section class="checkout-progress">
+
+    <div class="container">
+
+        <div class="progress-wrapper">
+
+            <div class="progress-step active">
+
+                <div class="step-number">
+
+                    1
+
+                </div>
+
+                <span>
+
+                    Information
+
+                </span>
+
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+
+                <div class="step-number">
+
+                    2
+
+                </div>
+
+                <span>
+
+                    Payment
+
+                </span>
+
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+
+                <div class="step-number">
+
+                    3
+
+                </div>
+
+                <span>
+
+                    Confirmation
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+CHECKOUT
+====================================== -->
+
+<section class="checkout">
+
+<div class="container">
+
+<div class="checkout-grid">
+
+<!-- LEFT -->
+
+<div class="checkout-left">
+
+<form id="checkoutForm">
+
+<!-- Customer Information -->
+
+<div class="checkout-card">
+
+<h2>
+
+Customer Information
+
+</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>
+
+First Name
+
+</label>
+
+<input
+type="text"
+id="firstName"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Last Name
+
+</label>
+
+<input
+type="text"
+id="lastName"
+required>
+
+</div>
+
+<div class="form-group full-width">
+
+<label>
+
+Email Address
+
+</label>
+
+<input
+type="email"
+id="email"
+required>
+
+</div>
+
+<div class="form-group full-width">
+
+<label>
+
+Phone Number (Optional)
+
+</label>
+
+<input
+type="tel"
+id="phone">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Payment -->
+
+<div class="checkout-card">
+
+<h2>
+
+Payment Method
+
+</h2>
+
+<div class="payment-options">
+
+<label class="payment-card">
+
+<input
+type="radio"
+name="payment"
+value="zelle"
+checked>
+
+<div>
+
+<img
+src="assets/images/zelle.png"
+alt="Zelle">
+
+<h4>
+
+Zelle
+
+</h4>
+
+</div>
+
+</label>
+
+<label class="payment-card">
+
+<input
+type="radio"
+name="payment"
+value="chime">
+
+<div>
+
+<img
+src="assets/images/chime.png"
+alt="Chime">
+
+<h4>
+
+Chime
+
+</h4>
+
+</div>
+
+</label>
+
+</div>
+<!-- What Happens Next -->
+
+<div class="checkout-card">
+
+    <h2>
+
+        What Happens Next?
+
+    </h2>
+
+    <div class="next-steps">
+
+        <div class="step-item">
+
+            <i data-lucide="shopping-cart"></i>
+
+            <div>
+
+                <h4>Submit Your Order</h4>
+
+                <p>
+                    Complete the checkout form below to submit your order request.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="step-item">
+
+            <i data-lucide="receipt"></i>
+
+            <div>
+
+                <h4>Receive Your Invoice</h4>
+
+                <p>
+                    We'll send an invoice with payment instructions to your email address.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="step-item">
+
+            <i data-lucide="credit-card"></i>
+
+            <div>
+
+                <h4>Complete Payment</h4>
+
+                <p>
+                    Follow the instructions in the invoice to complete your payment securely.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="step-item">
+
+            <i data-lucide="mail-check"></i>
+
+            <div>
+
+                <h4>Receive Your Study Guide</h4>
+
+                <p>
+                    After your payment is verified, your digital study guide will be delivered to your email.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- Notes -->
+
+<div class="checkout-card">
+
+<h2>
+
+Order Notes
+
+</h2>
+
+<textarea
+id="notes"
+rows="5"
+placeholder="Optional notes..."></textarea>
+
+</div>
+
+<!-- Terms -->
+
+<div class="checkout-card">
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+required>
+
+<span>
+
+I agree to the Terms of Service.
+
+</span>
+
+</label>
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+required>
+
+<span>
+
+I understand this is a digital product.
+
+</span>
+
+</label>
+
+</div>
+
+</form>
+
+</div>
+
+<!-- RIGHT -->
+
+<aside class="checkout-right">
+
+<div class="order-summary">
+
+<h2>
+
+Order Summary
+
+</h2>
+
+<img
+src="assets/images/guide-cover.png"
+alt="ATI TEAS Guide"
+class="product-image">
+
+<h3>
+
+ATI TEAS 7 Ultimate Success System
+
+</h3>
+
+<ul class="included-list">
+
+<li>✓ Active Recall Guide</li>
+
+<li>✓ TEAS Practice Questions</li>
+
+<li>✓ 14-Day Study Plan</li>
+
+<li>✓ 30-Day Study Plan</li>
+
+<li>✓ Formula Sheets</li>
+
+<li>✓ High-Yield Notes</li>
+
+<li>✓ Progress Tracker</li>
+
+<li>✓ Instant PDF Download</li>
+
+</ul>
+
+<div class="price-summary">
+
+<div>
+
+<span>
+
+Subtotal
+
+</span>
+
+<strong>
+
+$100
+
+</strong>
+
+</div>
+
+<div>
+
+<span>
+
+Total
+
+</span>
+
+<strong class="total-price">
+
+$100
+
+</strong>
+
+</div>
+
+</div>
+
+<div class="trust-badges">
+
+<div>
+
+<i data-lucide="shield-check"></i>
+
+Secure Checkout
+
+</div>
+
+<div>
+
+<i data-lucide="download"></i>
+
+Instant Delivery
+
+</div>
+
+<div>
+
+<i data-lucide="badge-dollar-sign"></i>
+
+One-Time Payment
+
+</div>
+
+<div>
+
+<i data-lucide="file-text"></i>
+
+Digital Download
+
+</div>
+
+</div>
+<div class="checkout-notice">
+
+    <i data-lucide="info"></i>
+
+    <p>
+
+        No payment is required on this page. After you submit your order, we'll email you an invoice with payment instructions. Once payment is confirmed, you'll receive your ATI TEAS 7 Ultimate Success System.
+
+    </p>
+
+</div>
+<div class="checkout-notice">
+
+    <div class="notice-icon">
+
+        <i data-lucide="info"></i>
+
+    </div>
+
+    <div class="notice-content">
+
+        <h4>
+            No Payment Required Yet
+        </h4>
+
+        <p>
+            Submit your order today and we'll email you an invoice with payment
+            instructions based on your selected payment method. Once payment is
+            confirmed, your ATI TEAS 7 Ultimate Success System will be delivered
+            to your email.
+        </p>
+
+    </div>
+
+</div>
+<button
+type="submit"
+form="checkoutForm"
+class="btn btn-primary checkout-btn">
+
+Submit Order
+
+</button>
+
+<p class="secure-message">
+
+<i data-lucide="lock"></i>
+
+By submitting this order, you'll receive an invoice with payment instructions at your email address. Your order is not confirmed until payment has been received.
+
+</p>
+
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+lucide.createIcons();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

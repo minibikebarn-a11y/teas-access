@@ -1,0 +1,73 @@
+<main class="main-content">
+
+<a href="orders.html" class="back-link">
+    ← Back to Orders
+</a>
+<link rel="stylesheet" href="css/admin.css">
+
+<section class="dashboard-card">
+
+<h2 id="orderNumber">
+Loading...
+</h2>
+
+<div id="statusBadge"></div>
+
+</section>
+
+<section class="dashboard-card">
+
+<h3>Customer Information</h3>
+
+<p><strong>Name:</strong> <span id="customerName"></span></p>
+
+<p><strong>Email:</strong> <span id="customerEmail"></span></p>
+
+<p><strong>Phone:</strong> <span id="customerPhone"></span></p>
+
+</section>
+
+<section class="dashboard-card">
+
+<h3>Order Information</h3>
+
+<p><strong>Payment:</strong> <span id="paymentMethod"></span></p>
+
+<p><strong>Total:</strong> $<span id="orderTotal"></span></p>
+
+<p><strong>Notes:</strong></p>
+
+<p id="orderNotes"></p>
+
+</section>
+
+<section class="dashboard-card">
+
+<h3>Update Status</h3>
+
+<select id="statusSelect">
+
+<option>Pending Payment</option>
+
+<option>Completed</option>
+
+<option>Cancelled</option>
+
+</select>
+
+<button
+    id="saveStatus"
+    class="login-btn">
+
+    Save Changes
+
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
+<script src="js/login.js"></script>
+<script src="js/order-details.js"></script>
+
+</section>
+
+</main>

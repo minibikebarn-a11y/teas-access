@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Support | TEAS ACCESS</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="contact-header">
+
+<div class="container">
+
+<a href="index.html" class="logo">
+<h2>TEAS ACCESS</h2>
+</a>
+
+</div>
+
+</header>
+
+<section class="contact-hero">
+
+<div class="container">
+
+<div class="contact-card glass">
+
+<div class="section-header">
+
+<span class="tag">
+Support
+</span>
+
+<h1>Contact Support</h1>
+
+<p>
+Need help with your order or have a question?
+Complete the form below and we'll respond as soon as possible.
+</p>
+
+</div>
+
+<form id="contactForm">
+
+<div class="form-grid">
+
+<div class="input-group">
+
+<label>
+Order Number (Optional)
+</label>
+
+<input
+type="text"
+id="orderNumber"
+placeholder="ORD-000123">
+
+</div>
+
+<div class="input-group">
+
+<label>
+Full Name
+</label>
+
+<input
+type="text"
+id="fullName"
+required
+placeholder="John Doe">
+
+</div>
+
+<div class="input-group">
+
+<label>
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+required
+placeholder="example@email.com">
+
+</div>
+
+<div class="input-group">
+
+<label>
+Phone Number
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="(555) 555-5555">
+
+</div>
+
+<div class="input-group full-width">
+
+<label>
+Subject
+</label>
+
+<select id="subject">
+
+<option>Order Question</option>
+
+<option>Payment Question</option>
+
+<option>Technical Issue</option>
+
+<option>Product Access</option>
+
+<option>Refund Request</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="input-group full-width">
+
+<label>
+Message
+</label>
+
+<textarea
+id="message"
+rows="7"
+placeholder="Describe your issue..."></textarea>
+
+</div>
+
+</div>
+
+<div class="button-row">
+
+<button
+type="submit"
+class="btn btn-primary">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Send Message
+
+</button>
+
+<a
+href="index.html"
+class="btn btn-outline">
+
+Return Home
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+<div class="support-card">
+
+<h2>Support Information</h2>
+
+<div class="support-item">
+
+<i class="fa-solid fa-envelope"></i>
+
+<div>
+
+<h4>Email</h4>
+
+<p>
+support@teasaccess.com
+</p>
+
+</div>
+
+</div>
+
+<div class="support-item">
+
+<i class="fa-solid fa-clock"></i>
+
+<div>
+
+<h4>Business Hours</h4>
+
+<p>
+
+Monday – Friday
+
+<br>
+
+9:00 AM – 6:00 PM EST
+
+</p>
+
+</div>
+
+</div>
+
+<div class="support-item">
+
+<i class="fa-solid fa-headset"></i>
+
+<div>
+
+<h4>Average Response Time</h4>
+
+<p>
+
+Within 24 Hours
+
+</p>
+
+</div>
+
+</div>
+
+<div class="support-item">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<div>
+
+<h4>Order Support</h4>
+
+<p>
+
+Please include your order number
+for faster assistance.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="contact-footer">
+
+<div class="container">
+
+<p>
+
+© <span id="copyright-year"></span>
+
+TEAS ACCESS.
+
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+document.getElementById("copyright-year").textContent =
+new Date().getFullYear();
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+alert("Your support request has been sent.");
+
+});
+</script>
+
+</body>
+
+</html>

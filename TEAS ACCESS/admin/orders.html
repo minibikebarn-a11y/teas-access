@@ -1,0 +1,87 @@
+<main class="main-content">
+
+<header class="topbar">
+<link rel="stylesheet" href="css/admin.css">
+<div>
+
+<h1>Orders</h1>
+
+<p>Manage customer orders</p>
+
+</div>
+
+</header>
+
+<div class="orders-toolbar">
+
+<input
+type="text"
+id="searchOrders"
+placeholder="Search by order number or customer...">
+
+<select id="statusFilter">
+
+<option value="All">All Orders</option>
+
+<option value="Pending Payment">Pending Payment</option>
+
+<option value="Completed">Completed</option>
+
+<option value="Cancelled">Cancelled</option>
+
+</select>
+
+</div>
+
+<section class="dashboard-card">
+
+<table class="orders-table">
+
+<thead>
+
+<tr>
+
+<th>Order #</th>
+
+<th>Customer</th>
+
+<th>Email</th>
+
+<th>Payment</th>
+
+<th>Total</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+<tr>
+
+<td colspan="7">
+
+Loading orders...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Go up one level to reach the project root -->
+<script src="../js/supabase.js"></script>
+
+<!-- login.js is inside admin/js -->
+<script src="js/login.js"></script>

@@ -78,6 +78,29 @@ async function submitOrder(e){
 
         if(error) throw error;
 
+        try{
+
+            await fetch("/api/send-order-email", {
+
+                method: "POST",
+
+                headers: { "Content-Type": "application/json" },
+
+                body: JSON.stringify({ order })
+
+            });
+
+        }
+
+        catch(emailErr){
+
+            // Order still succeeded even if the email fails to send.
+            // Log it so it can be investigated, but don't block the customer.
+
+            console.error("Order email failed to send:", emailErr);
+
+        }
+
         sessionStorage.setItem("lastOrder",JSON.stringify(order));
 
         window.location.href="success.html";

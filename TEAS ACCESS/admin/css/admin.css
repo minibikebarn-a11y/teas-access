@@ -8,23 +8,25 @@ margin:0;
 
 font-family:inherit;
 
-background:linear-gradient(135deg,#0A4FAF,#6EA8FE);
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
 }
 
 .login-page{
 
 width:100%;
 
+min-height:100vh;
+
 padding:30px;
+
+box-sizing:border-box;
+
+background:linear-gradient(135deg,#0A4FAF,#6EA8FE);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
 

@@ -33,26 +33,62 @@ module.exports = async (req, res) => {
             total
         });
 
-        const response = await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                from: "TEAS ACCESS <orders@teasaccess.com>",
-                to: order.email,
-                reply_to: "support@teasaccess.com",
-                subject: `Your TEAS ACCESS Order ${order.order_number}`,
-                html
-            })
+        const ownerHtml = buildOwnerNotificationHtml({
+            fullName,
+            email: order.email,
+            phone: order.phone,
+            orderNumber: order.order_number,
+            paymentLabel,
+            total,
+            notes: order.notes
         });
 
-        const data = await response.json();
+        const [customerResponse, ownerResponse] = await Promise.all([
 
-        if (!response.ok) {
-            console.error("Resend error:", data);
-            return res.status(502).json({ error: "Failed to send email", details: data });
+            fetch("https://api.resend.com/emails", {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    from: "TEAS ACCESS <orders@teasaccess.com>",
+                    to: order.email,
+                    reply_to: "support@teasaccess.com",
+                    subject: `Your TEAS ACCESS Order ${order.order_number}`,
+                    html
+                })
+            }),
+
+            fetch("https://api.resend.com/emails", {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    from: "TEAS ACCESS <orders@teasaccess.com>",
+                    to: "minibikebarn@gmail.com",
+                    reply_to: order.email,
+                    subject: `New Order: ${order.order_number} (${paymentLabel})`,
+                    html: ownerHtml
+                })
+            })
+
+        ]);
+
+        const data = await customerResponse.json();
+        const ownerData = await ownerResponse.json();
+
+        if (!customerResponse.ok) {
+            console.error("Resend error (customer email):", data);
+            return res.status(502).json({ error: "Failed to send customer email", details: data });
+        }
+
+        if (!ownerResponse.ok) {
+            // Customer email already succeeded, so don't fail the whole request —
+            // just log it so it can be investigated.
+            console.error("Resend error (owner notification):", ownerData);
         }
 
         return res.status(200).json({ success: true, id: data.id });
@@ -139,6 +175,84 @@ function buildInvoiceHtml({ fullName, orderNumber, paymentLabel, total }) {
           <tr>
             <td style="padding:20px 40px;background:#F7FAFF;text-align:center;">
               <span style="font-size:12px;color:#9CA3AF;">&copy; ${new Date().getFullYear()} TEAS ACCESS. All rights reserved.</span>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `;
+
+}
+
+// ========================================
+// OWNER NOTIFICATION TEMPLATE
+// ========================================
+
+function buildOwnerNotificationHtml({ fullName, email, phone, orderNumber, paymentLabel, total, notes }) {
+
+    return `
+<!DOCTYPE html>
+<html>
+<body style="margin:0;padding:0;background:#F7FAFF;font-family:Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#F7FAFF;padding:40px 0;">
+    <tr>
+      <td align="center">
+        <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;">
+
+          <tr>
+            <td style="background-color:#0A4FAF;padding:30px 40px;">
+              <span style="color:#ffffff;font-size:20px;font-weight:bold;">New Order Received</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:40px;">
+
+              <p style="margin:0 0 25px;font-size:15px;line-height:1.7;color:#6B7280;">
+                A new order needs payment instructions sent out.
+              </p>
+
+              <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #EEF2F7;border-radius:12px;margin-bottom:20px;">
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Order Number</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;font-weight:600;">${orderNumber}</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Customer</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">${fullName || "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Email</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">${email}</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Phone</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">${phone || "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Payment Method</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">${paymentLabel}</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;font-size:15px;color:#1E293B;font-weight:700;">Total</td>
+                  <td style="padding:14px 20px;font-size:18px;color:#0A4FAF;text-align:right;font-weight:700;">$${total}</td>
+                </tr>
+              </table>
+
+              ${notes ? `
+              <div style="background:#F7FAFF;border-radius:12px;padding:16px 20px;margin-bottom:10px;">
+                <p style="margin:0;font-size:13px;color:#6B7280;"><strong>Customer notes:</strong> ${notes}</p>
+              </div>
+              ` : ""}
+
+              <p style="margin:15px 0 0;font-size:13px;line-height:1.6;color:#9CA3AF;">
+                Reply directly to this email to reach the customer at ${email}.
+              </p>
+
             </td>
           </tr>
 

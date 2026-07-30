@@ -62,7 +62,7 @@ async function submitOrder(e){
 
             payment_method: document.querySelector('input[name="payment"]:checked').value,
 
-            
+            notes: document.getElementById("notes") ? document.getElementById("notes").value : "",
 
             total:100,
 

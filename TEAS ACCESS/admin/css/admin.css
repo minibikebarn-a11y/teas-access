@@ -205,6 +205,12 @@ background:#F6F9FC;
 
 }
 
+.admin-layout > *{
+
+min-width:0;
+
+}
+
 /*========================================
 PREMIUM SIDEBAR
 ========================================*/
@@ -363,6 +369,8 @@ PREMIUM SIDEBAR
 .main-content{
 
 padding:40px;
+
+min-width:0;
 
 }
 

@@ -26,11 +26,14 @@ module.exports = async (req, res) => {
 
         const total = Number(order.total || 0).toFixed(2);
 
+        const planName = order.plan || "ATI TEAS 7 Ultimate Success System";
+
         const html = buildInvoiceHtml({
             fullName,
             orderNumber: order.order_number,
             paymentLabel,
-            total
+            total,
+            planName
         });
 
         const ownerHtml = buildOwnerNotificationHtml({
@@ -40,6 +43,7 @@ module.exports = async (req, res) => {
             orderNumber: order.order_number,
             paymentLabel,
             total,
+            planName,
             notes: order.notes
         });
 
@@ -107,7 +111,7 @@ module.exports = async (req, res) => {
 // EMAIL TEMPLATE
 // ========================================
 
-function buildInvoiceHtml({ fullName, orderNumber, paymentLabel, total }) {
+function buildInvoiceHtml({ fullName, orderNumber, paymentLabel, total, planName }) {
 
     return `
 <!DOCTYPE html>
@@ -132,7 +136,7 @@ function buildInvoiceHtml({ fullName, orderNumber, paymentLabel, total }) {
               </h1>
 
               <p style="margin:0 0 25px;font-size:15px;line-height:1.7;color:#6B7280;">
-                We've received your order for the <strong>ATI TEAS 7 Ultimate Success System</strong>.
+                We've received your order for the <strong>${planName}</strong>.
                 Here's a summary of what you submitted:
               </p>
 
@@ -143,7 +147,7 @@ function buildInvoiceHtml({ fullName, orderNumber, paymentLabel, total }) {
                 </tr>
                 <tr>
                   <td style="padding:16px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Product</td>
-                  <td style="padding:16px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">ATI TEAS 7 Ultimate Success System</td>
+                  <td style="padding:16px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">${planName}</td>
                 </tr>
                 <tr>
                   <td style="padding:16px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Payment Method</td>
@@ -192,7 +196,7 @@ function buildInvoiceHtml({ fullName, orderNumber, paymentLabel, total }) {
 // OWNER NOTIFICATION TEMPLATE
 // ========================================
 
-function buildOwnerNotificationHtml({ fullName, email, phone, orderNumber, paymentLabel, total, notes }) {
+function buildOwnerNotificationHtml({ fullName, email, phone, orderNumber, paymentLabel, total, planName, notes }) {
 
     return `
 <!DOCTYPE html>
@@ -232,6 +236,10 @@ function buildOwnerNotificationHtml({ fullName, email, phone, orderNumber, payme
                 <tr>
                   <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Phone</td>
                   <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;">${phone || "-"}</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Plan</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#1E293B;text-align:right;font-weight:600;">${planName || "-"}</td>
                 </tr>
                 <tr>
                   <td style="padding:14px 20px;border-bottom:1px solid #EEF2F7;font-size:14px;color:#6B7280;">Payment Method</td>

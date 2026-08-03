@@ -26,11 +26,11 @@ gap:70px;
 
 .hero-left h1{
 
-font-size:68px;
+font-size:64px;
 
-margin:30px 0;
+margin:26px 0;
 
-line-height:1.05;
+line-height:1.08;
 
 }
 
@@ -98,14 +98,308 @@ object-fit:cover;
 
 }
 
+/*========================================
+SCORE REPORT — hero signature component
+Stands in for the old floating glass card.
+Fills in section-by-section as it enters view,
+literalizing "pass with confidence."
+========================================*/
+
+.score-report{
+
+    background:var(--white);
+
+    border-radius:22px;
+
+    border:1px solid var(--rule);
+
+    box-shadow:var(--shadow-lg);
+
+    padding:36px 38px 32px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Corner tick marks — evoke an exam/scantron sheet corner */
+
+.score-report::before,
+.score-report::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    border:2px solid var(--rule);
+
+}
+
+.score-report::before{
+
+    top:14px;
+
+    left:14px;
+
+    border-right:none;
+
+    border-bottom:none;
+
+}
+
+.score-report::after{
+
+    bottom:14px;
+
+    right:14px;
+
+    border-left:none;
+
+    border-top:none;
+
+}
+
+.score-report-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:26px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px dashed var(--rule);
+
+}
+
+.score-report-label{
+
+    font-family:var(--font-mono);
+
+    font-size:12px;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+    color:var(--gray);
+
+}
+
+.score-report-title{
+
+    font-family:var(--font-display);
+
+    font-size:20px;
+
+    color:var(--dark);
+
+    margin-top:4px;
+
+}
+
+.score-report-pass{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:7px 16px;
+
+    border-radius:999px;
+
+    background:var(--accent-light);
+
+    color:var(--accent-dark);
+
+    font-family:var(--font-mono);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.06em;
+
+    text-transform:uppercase;
+
+}
+
+.score-row{
+
+    margin-bottom:20px;
+
+}
+
+.score-row:last-of-type{
+
+    margin-bottom:0;
+
+}
+
+.score-row-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:baseline;
+
+    margin-bottom:8px;
+
+}
+
+.score-row-label{
+
+    font-weight:600;
+
+    font-size:14.5px;
+
+    color:var(--dark);
+
+}
+
+.score-row-value{
+
+    font-family:var(--font-mono);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.score-track{
+
+    height:9px;
+
+    background:var(--light);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    border:1px solid var(--rule);
+
+}
+
+.score-fill{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+    transition:width 1.3s cubic-bezier(.2,.8,.2,1);
+
+}
+
+/* Fill in once the parent enters view (reveal.js adds .active) */
+
+.hero-right.active .score-fill{
+
+    width:var(--fill);
+
+}
+
+.score-report-footer{
+
+    margin-top:26px;
+
+    padding-top:24px;
+
+    border-top:1px dashed var(--rule);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.score-overall-label{
+
+    font-size:13px;
+
+    color:var(--gray);
+
+    font-weight:600;
+
+}
+
+.score-overall-value{
+
+    font-family:var(--font-mono);
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+}
+
+.score-overall-value span{
+
+    font-size:18px;
+
+    color:var(--gray);
+
+    font-weight:600;
+
+}
+
 .hero-card{
 
-padding:40px;
+    animation:float 6s ease infinite;
 
-border-radius:30px;
+}
 
-animation:float 6s ease infinite;
+/*========================================
+HERO RATING ICON (replaces avatar photos)
+========================================*/
 
-box-shadow:var(--shadow-lg);
+.hero-rating-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+}
+
+.hero-rating-icon i{
+
+    width:24px;
+
+    height:24px;
+
+    color:#fff;
 
 }

@@ -50,6 +50,7 @@
 
 <!-- Product CSS -->
 <link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="css/pricing.css">
 
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -67,37 +68,61 @@
 HEADER
 ====================================== -->
 
-<header class="page-header">
+<header class="header">
 
-<div class="container">
+    <div class="container">
 
-<a href="index.html" class="logo">
+        <nav class="navbar">
 
-<h2>TEAS ACCESS</h2>
+            <a href="index.html" class="logo">
+                <h2>TEAS ACCESS</h2>
+            </a>
 
-</a>
+            <ul class="nav-links">
 
-<nav>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html" class="active">Product</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
 
-<ul>
+            </ul>
 
-<li><a href="index.html">Home</a></li>
+            <div class="nav-right">
 
-<li><a href="about.html">About</a></li>
+                <a href="checkout.html" class="buy-btn">
+                    Buy Now
+                </a>
 
-<li><a href="product.html" class="active">Products</a></li>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-<li><a href="faq.html">FAQ</a></li>
+            </div>
 
-<li><a href="contact.html">Contact</a></li>
+        </nav>
 
-</ul>
-
-</nav>
-
-</div>
+    </div>
 
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="product.html">Product</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="checkout.html" class="mobile-buy-btn">
+        Buy Now
+    </a>
+
+</div>
 
 <!-- =====================================
 HERO
@@ -111,22 +136,21 @@ HERO
 
 <span class="tag">
 
-STUDY RESOURCES
+CHOOSE YOUR PLAN
 
 </span>
 
 <h1>
 
-Prepare Smarter.
-Study With Confidence.
+Pick The Plan That Matches
+Your Timeline And Budget.
 
 </h1>
 
 <p>
 
-Explore our growing collection of ATI TEAS study
-resources designed to help you prepare efficiently
-and build confidence before exam day.
+Whether your exam is in two weeks or two months, there's a plan built
+around how much time you actually have — not a one-size-fits-all bundle.
 
 </p>
 
@@ -140,7 +164,7 @@ and build confidence before exam day.
 FEATURED PRODUCT
 ====================================== -->
 
-<section class="featured-product">
+<section class="pricing-section" id="pricing">
 
 <div class="container">
 
@@ -148,111 +172,134 @@ FEATURED PRODUCT
 
 <span class="tag">
 
-AVAILABLE NOW
+CHOOSE YOUR PLAN
 
 </span>
 
 <h2>
 
-Featured Study Resource
-
-</h2>
-
-</div>
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img src="images/product-bundle.png"
-alt="TEAS Success Bundle">
-
-</div>
-
-<div class="product-info">
-
-<h2>
-
-ATI TEAS Success Bundle
+Pick The System That Fits Your Timeline
 
 </h2>
 
 <p>
 
-Everything you need in one complete resource to
-prepare for the ATI TEAS examination.
+Every plan is a one-time purchase — no subscriptions, no recurring charges.
 
 </p>
 
-<ul class="product-features">
+</div>
 
-<li>
+<div class="pricing-grid">
 
-<i class="fa-solid fa-check"></i>
+<!-- TIER 1 — $50 -->
+<div class="pricing-card">
 
-Active Recall Study Guide
+    <div class="pricing-card-header">
 
-</li>
+        <span class="pricing-tier-label">Essentials</span>
 
-<li>
+        <div class="pricing-price">
+            <span class="mono-stat">$50</span>
+            <span class="pricing-period">one-time</span>
+        </div>
 
-<i class="fa-solid fa-check"></i>
+        <p class="pricing-tagline">Core tools to get started</p>
 
-TEAS-Style Practice Questions
+    </div>
 
-</li>
+    <ul class="pricing-features">
 
-<li>
+        <li><i class="fa-solid fa-check"></i> Active Recall Study Guide</li>
+        <li><i class="fa-solid fa-check"></i> 1,500 ATI TEAS-Style Practice Questions</li>
+        <li><i class="fa-solid fa-check"></i> 14-Day Study Plan</li>
+        <li><i class="fa-solid fa-check"></i> Weakness Reports</li>
+        <li><i class="fa-solid fa-check"></i> Instant PDF Delivery</li>
+        <li><i class="fa-solid fa-check"></i> Lifetime Access</li>
 
-<i class="fa-solid fa-check"></i>
+    </ul>
 
-Detailed Answer Rationales
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-check"></i>
-
-14-Day Study Plan
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-check"></i>
-
-30-Day Study Plan
-
-</li>
-
-<li>
-
-<i class="fa-solid fa-check"></i>
-
-Instant Digital Access
-
-</li>
-
-</ul>
-
-<div class="product-buttons">
-
-<a href="checkout.html"
-class="btn btn-primary">
-
-Buy Now
-
-</a>
-
-<a href="contact.html"
-class="btn btn-outline">
-
-Ask a Question
-
-</a>
+    <a href="checkout.html?tier=50" class="btn btn-outline pricing-btn">
+        Get Started
+    </a>
 
 </div>
+
+<!-- TIER 2 — $100 — Most Popular -->
+<div class="pricing-card pricing-card-featured">
+
+    <span class="pricing-ribbon">Most Popular</span>
+
+    <div class="pricing-card-header">
+
+        <span class="pricing-tier-label">Ultimate Success System</span>
+
+        <div class="pricing-price">
+            <span class="mono-stat">$100</span>
+            <span class="pricing-period">one-time</span>
+        </div>
+
+        <p class="pricing-tagline">Everything you need, start to finish</p>
+
+    </div>
+
+    <ul class="pricing-features">
+
+        <li><i class="fa-solid fa-check"></i> Active Recall Study Guide</li>
+        <li><i class="fa-solid fa-check"></i> 3,500 ATI TEAS-Style Practice Questions</li>
+        <li><i class="fa-solid fa-check"></i> Detailed Answer Rationales</li>
+        <li><i class="fa-solid fa-check"></i> 14-Day &amp; 30-Day Study Plans</li>
+        <li><i class="fa-solid fa-check"></i> High-Yield Review Notes &amp; Formula Sheets</li>
+        <li><i class="fa-solid fa-check"></i> Progress Tracker</li>
+        <li><i class="fa-solid fa-check"></i> Weakness Reports</li>
+        <li><i class="fa-solid fa-check"></i> Cheat Sheets</li>
+        <li><i class="fa-solid fa-check"></i> Instant PDF Delivery</li>
+        <li class="pricing-feature-bonus"><i class="fa-solid fa-gift"></i> Lifetime Access — free future updates included</li>
+
+    </ul>
+
+    <div class="pricing-value-note">
+        <i class="fa-solid fa-arrow-trend-up"></i>
+        2.3x more practice questions than Essentials — the plan most students choose
+    </div>
+
+    <a href="checkout.html?tier=100" class="btn btn-primary pricing-btn">
+        Buy Now
+    </a>
+
+</div>
+
+<!-- TIER 3 — $150 -->
+<div class="pricing-card">
+
+    <span class="pricing-ribbon pricing-ribbon-gold">All-Access</span>
+
+    <div class="pricing-card-header">
+
+        <span class="pricing-tier-label">All-Access VIP</span>
+
+        <div class="pricing-price">
+            <span class="mono-stat">$150</span>
+            <span class="pricing-period">one-time</span>
+        </div>
+
+        <p class="pricing-tagline">Everything, plus direct support</p>
+
+    </div>
+
+    <ul class="pricing-features">
+
+        <li><i class="fa-solid fa-check"></i> Everything in the Ultimate Success System</li>
+        <li><i class="fa-solid fa-check"></i> Priority WhatsApp Study Support</li>
+        <li><i class="fa-solid fa-check"></i> Bonus High-Yield Flashcard Deck</li>
+        <li><i class="fa-solid fa-check"></i> Early Access to New Study Resources</li>
+        <li class="pricing-feature-bonus"><i class="fa-solid fa-gift"></i> Lifetime Free Updates — every future revision, included</li>
+
+    </ul>
+
+    <a href="checkout.html?tier=150" class="btn btn-outline pricing-btn">
+        Get VIP Access
+    </a>
 
 </div>
 
@@ -391,7 +438,7 @@ WHY TEAS ACCESS
 
 <h2>
 
-Why Students Choose TEAS ACCESS
+Built By People Who Understand The Pressure You're Under
 
 </h2>
 
@@ -405,13 +452,13 @@ Why Students Choose TEAS ACCESS
 
 <h3>
 
-Instant Access
+No Waiting Around
 
 </h3>
 
 <p>
 
-Start studying immediately after purchase.
+Your study guide arrives by email the moment your order is confirmed — start today, not after a shipping delay.
 
 </p>
 
@@ -423,13 +470,13 @@ Start studying immediately after purchase.
 
 <h3>
 
-Updated Content
+Built For The Current Exam
 
 </h3>
 
 <p>
 
-Resources designed for the ATI TEAS 7 exam.
+Every practice question and study plan is written specifically for the ATI TEAS 7 — not recycled from an older version of the test.
 
 </p>
 
@@ -441,13 +488,13 @@ Resources designed for the ATI TEAS 7 exam.
 
 <h3>
 
-Study Anywhere
+Study Wherever You Actually Have Time
 
 </h3>
 
 <p>
 
-Desktop, tablet and mobile friendly.
+Between classes, on your phone during a break, or at your desk at night — your materials go wherever you do.
 
 </p>
 
@@ -471,17 +518,17 @@ CTA
 
 <h2>
 
-Ready To Start Studying?
+Still Deciding? Start With What You Need Most.
 
 </h2>
 
 <p>
 
-Get instant access to our complete ATI TEAS Success Bundle.
+Every plan is a one-time payment — no subscriptions, no recurring charges, and instant delivery the moment your order is confirmed.
 
 </p>
 
-<a href="checkout.html"
+<a href="checkout.html?tier=100"
 class="btn btn-primary">
 
 Get Started
@@ -520,11 +567,9 @@ document.getElementById("year").textContent =
 new Date().getFullYear();
 
 </script>
-<!-- ============================================
-WHATSAPP FLOATING BUTTON
-Paste this right before </body> on every page
-(after your other content, so it floats on top)
-============================================ -->
+
+<script src="js/mobile-menu.js"></script>
+
 
 <a
     href="https://wa.me/18068530752?text=Hi!%20I%20have%20a%20question%20about%20TEAS%20ACCESS"

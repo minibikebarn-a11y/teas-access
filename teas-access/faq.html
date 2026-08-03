@@ -67,35 +67,61 @@
 HEADER
 =========================================== -->
 
-<header class="page-header">
+<header class="header">
 
     <div class="container">
 
-        <a href="index.html" class="logo">
-            <h2>TEAS ACCESS</h2>
-        </a>
+        <nav class="navbar">
 
-        <nav>
+            <a href="index.html" class="logo">
+                <h2>TEAS ACCESS</h2>
+            </a>
 
-            <ul>
+            <ul class="nav-links">
 
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="about.html">About</a></li>
-
-                <li><a href="product.html">Products</a></li>
-
+                <li><a href="product.html">Product</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="faq.html" class="active">FAQ</a></li>
-
                 <li><a href="contact.html">Contact</a></li>
 
             </ul>
+
+            <div class="nav-right">
+
+                <a href="checkout.html" class="buy-btn">
+                    Buy Now
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
 
         </nav>
 
     </div>
 
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="product.html">Product</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="checkout.html" class="mobile-buy-btn">
+        Buy Now
+    </a>
+
+</div>
 
 <!-- ==========================================
 HERO
@@ -226,19 +252,15 @@ health programs.
 
 <div class="faq-answer">
 
-<ul>
+<p>
 
-<li>Active Recall Study Guide</li>
+It depends on the plan you choose. All three plans include the Active Recall
+Study Guide and a study plan built around your timeline. The higher tiers add
+more practice questions, detailed answer rationales, weakness reports,
+progress tracking, and priority support. See the full breakdown on our
+<a href="product.html">Pricing page</a>.
 
-<li>TEAS-Style Practice Questions</li>
-
-<li>Answer Rationales</li>
-
-<li>14-Day Study Plan</li>
-
-<li>30-Day Study Plan</li>
-
-</ul>
+</p>
 
 </div>
 
@@ -260,9 +282,10 @@ health programs.
 
 <p>
 
-Once your purchase is completed,
-your study materials become available
-according to your selected access option.
+After you submit your order, we'll email you an invoice with payment
+instructions for your selected payment method (Zelle or Chime). Once your
+payment is confirmed, your digital study guide is delivered straight to
+your email — no waiting on shipping, no physical delivery.
 
 </p>
 
@@ -356,7 +379,7 @@ Our team typically responds within
 
 <button class="faq-question">
 
-<span>I forgot my account information.</span>
+<span>What payment methods do you accept?</span>
 
 <i class="fa-solid fa-plus"></i>
 
@@ -366,9 +389,34 @@ Our team typically responds within
 
 <p>
 
-Please contact support using your
-purchase email so we can help
-restore your account access.
+We currently accept Zelle and Chime. After you submit your order, we'll
+send you an invoice by email with the exact payment details for your
+selected method. Your order is confirmed once payment is received.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Question -->
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>Can I upgrade to a different plan after purchasing?</span>
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Reach out through our Contact page or WhatsApp and we'll help you
+upgrade to a higher tier — you'll only need to cover the price difference.
 
 </p>
 
@@ -459,11 +507,8 @@ item.classList.toggle("active");
 });
 
 </script>
-<!-- ============================================
-WHATSAPP FLOATING BUTTON
-Paste this right before </body> on every page
-(after your other content, so it floats on top)
-============================================ -->
+
+<script src="js/mobile-menu.js"></script>
 
 <a
     href="https://wa.me/18068530752?text=Hi!%20I%20have%20a%20question%20about%20TEAS%20ACCESS"

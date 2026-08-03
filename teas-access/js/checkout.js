@@ -2,7 +2,63 @@
 // CHECKOUT
 //=========================================
 
+//=========================================
+// PLAN TIERS
+// Keep this in sync with the pricing cards on
+// index.html and product.html
+//=========================================
+
+const TIERS = {
+
+    "50": {
+        name: "ATI TEAS Essentials",
+        price: 50,
+        features: [
+            "Active Recall Study Guide",
+            "1,500 ATI TEAS-Style Practice Questions",
+            "14-Day Study Plan",
+            "Weakness Reports",
+            "Instant PDF Delivery",
+            "Lifetime Access"
+        ]
+    },
+
+    "100": {
+        name: "ATI TEAS 7 Ultimate Success System",
+        price: 100,
+        features: [
+            "Active Recall Study Guide",
+            "3,500 ATI TEAS-Style Practice Questions",
+            "Detailed Answer Rationales",
+            "14-Day & 30-Day Study Plans",
+            "High-Yield Review Notes & Formula Sheets",
+            "Progress Tracker",
+            "Weakness Reports",
+            "Cheat Sheets",
+            "Instant PDF Delivery",
+            "Lifetime Access"
+        ]
+    },
+
+    "150": {
+        name: "ATI TEAS All-Access VIP",
+        price: 150,
+        features: [
+            "Everything in the Ultimate Success System",
+            "Priority WhatsApp Study Support",
+            "Bonus High-Yield Flashcard Deck",
+            "Early Access to New Study Resources",
+            "Lifetime Free Updates"
+        ]
+    }
+
+};
+
+let selectedTier = TIERS["100"];
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    loadSelectedTier();
 
     const form = document.getElementById("checkoutForm");
 
@@ -11,6 +67,44 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", submitOrder);
 
 });
+
+//=========================================
+// READ TIER FROM URL & POPULATE SUMMARY
+//=========================================
+
+function loadSelectedTier(){
+
+    const params = new URLSearchParams(window.location.search);
+
+    const tierKey = params.get("tier");
+
+    selectedTier = TIERS[tierKey] || TIERS["100"];
+
+    const titleEl = document.getElementById("orderProductTitle");
+
+    const listEl = document.getElementById("orderIncludedList");
+
+    const subtotalEl = document.getElementById("orderSubtotal");
+
+    const totalEl = document.getElementById("orderTotal");
+
+    if(titleEl) titleEl.textContent = selectedTier.name;
+
+    if(listEl){
+
+        listEl.innerHTML = selectedTier.features
+
+            .map(feature => `<li>✓ ${feature}</li>`)
+
+            .join("");
+
+    }
+
+    if(subtotalEl) subtotalEl.textContent = `$${selectedTier.price}`;
+
+    if(totalEl) totalEl.textContent = `$${selectedTier.price}`;
+
+}
 
 //=========================================
 // GENERATE ORDER NUMBER
@@ -64,7 +158,9 @@ async function submitOrder(e){
 
             notes: document.getElementById("notes") ? document.getElementById("notes").value : "",
 
-            total:100,
+            plan: selectedTier.name,
+
+            total: selectedTier.price,
 
             status:"Pending Payment"
 

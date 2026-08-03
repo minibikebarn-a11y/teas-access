@@ -58,37 +58,61 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<header class="page-header">
+<header class="header">
 
-<div class="container">
+    <div class="container">
 
-<a href="index.html" class="logo">
+        <nav class="navbar">
 
-<h2>TEAS ACCESS</h2>
+            <a href="index.html" class="logo">
+                <h2>TEAS ACCESS</h2>
+            </a>
 
-</a>
+            <ul class="nav-links">
 
-<nav>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
 
-<ul>
+            </ul>
 
-<li><a href="index.html">Home</a></li>
+            <div class="nav-right">
 
-<li><a href="about.html">About</a></li>
+                <a href="checkout.html" class="buy-btn">
+                    Buy Now
+                </a>
 
-<li><a href="product.html">Products</a></li>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-<li><a href="faq.html">FAQ</a></li>
+            </div>
 
-<li><a href="contact.html" class="active">Contact</a></li>
+        </nav>
 
-</ul>
-
-</nav>
-
-</div>
+    </div>
 
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="product.html">Product</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="checkout.html" class="mobile-buy-btn">
+        Buy Now
+    </a>
+
+</div>
 
 <section class="contact-hero">
 
@@ -351,11 +375,9 @@ alert("Your support request has been sent.");
 
 });
 </script>
-<!-- ============================================
-WHATSAPP FLOATING BUTTON
-Paste this right before </body> on every page
-(after your other content, so it floats on top)
-============================================ -->
+
+<script src="js/mobile-menu.js"></script>
+
 
 <a
     href="https://wa.me/18068530752?text=Hi!%20I%20have%20a%20question%20about%20TEAS%20ACCESS"
